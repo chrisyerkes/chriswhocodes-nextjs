@@ -1,0 +1,115 @@
+.services {
+	overflow: hidden;
+	@include rfs(38px, padding-bottom);
+
+	.services-slider {
+		.flickity-viewport {
+			overflow: visible;
+		}
+		.single-service {
+			width: 270px;
+			@include rfs(24px, margin-right);
+
+			.card {
+				width: 100%;
+				height: 100%;
+				position: relative;
+				@include rfs(4px, border-radius);
+				@include rfs(40px, padding-top);
+				@include rfs(40px, padding-bottom);
+				@include rfs(22px, padding-left);
+				@include rfs(22px, padding-right);
+				cursor: grab;
+				box-shadow:
+					0.3px 0.7px 1.1px rgba(46, 52, 68, 0.036),
+					1.1px 2.2px 3.6px rgba(46, 52, 68, 0.084),
+					1.8px 9px 16px rgba(46, 52, 68, 0.12);
+				transition: box-shadow 0.25s, transform 0.25s;
+
+				&::before {
+					content: '';
+					width: calc(100% - 9px);
+					height: calc(100% - 9px);
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					background-color: #fff;
+					z-index: 0;
+				}
+				& > * {
+					&:is(p, div, span, h1, h2, h3, h4, h5, h6, img) {
+						position: relative;
+						z-index: 50;
+					}
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+				&:hover {
+					transform: translate3d(0,-6px,0);
+					box-shadow:
+						0.3px 0.8px 2px rgba(0, 0, 0, 0.065),
+						0.9px 2.7px 6.7px rgba(0, 0, 0, 0.095),
+						4px 12px 30px rgba(0, 0, 0, 0.16);
+				}
+			}
+			.service-icon {
+				@include font-size(40px);
+				line-height: 1;
+				width: 88px;
+				height: 88px;
+				color: #fff;
+				@include rfs(100%, border-radius);
+				@include rfs(28px, margin-bottom);
+				background: linear-gradient(360deg, $body-color -4.55%, $darkened-body-color 100%);
+				box-shadow:
+					0px 0.3px 1px rgba(0, 0, 0, 0.182),
+					0px 2px 3.4px rgba(0, 0, 0, 0.168),
+					0px 4px 15px rgba(0, 0, 0, 0.25);
+
+				// Minor icon tweaks
+				.fa-wordpress-simple {
+					transform: translate3d(0,1px,0);
+				}
+				.fa-business-time {
+					transform: translate3d(3px,0,0);
+				}
+				.fa-code {
+					transform: translate3d(0,1px,0);
+				}
+				.fa-plug {
+					transform: rotate(45deg) translate3d(.5px,2px,0);
+				}
+			}
+			h4 {
+				font-family: $font-family-sans-serif;
+				@include font-size(20px);
+				font-weight: $font-weight-bold;
+			}
+			&:nth-child(4n + 1) {
+				.card {
+					@include gradient-x($cyan, $teal);
+				}
+			}
+			&:nth-child(4n + 2) {
+				.card {
+					@include gradient-x($yellow, $magenta);
+				}
+			}
+			&:nth-child(4n + 3) {
+				.card {
+					@include gradient-x($light-blue, $dark-cyan);
+				}
+			}
+			&:nth-child(4n + 4) {
+				.card {
+					@include gradient-x($dark-blue, $dark-magenta);
+				}
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}

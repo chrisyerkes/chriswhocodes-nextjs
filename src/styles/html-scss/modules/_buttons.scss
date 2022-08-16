@@ -1,0 +1,152 @@
+.btn {
+	&:focus {
+		outline: -webkit-focus-ring-color auto 1px;
+	}
+	&:not(.stretched-link) {
+		position: relative;
+	}
+
+	&.btn-link {
+		@include font-size(24px);
+		text-transform: uppercase;
+		font-weight: $font-weight-bold;
+		padding-left: 0;
+		padding-right: 0;
+		text-decoration: none;
+
+		&.btn-link-sm {
+			@include font-size(16px);
+		}
+		&[class*="has-gradient-"] {
+			text-decoration: none;
+		}
+		&.has-arrow-right {
+			.svg-inline--fa {
+				transition: transform 0.25s;
+			}
+			&:hover {
+				.svg-inline--fa {
+					// transform: translateX(5px);
+				}
+			}
+		}
+		&.has-gradient-1 {
+			border-radius: 0;
+			background-image: linear-gradient(to right, $teal, $light-blue), linear-gradient(to right, $magenta, $dark-blue);
+			background-size: 100% 4px, 0 4px;
+			background-position: 100% 100%, 0 100%;
+			background-repeat: no-repeat;
+			transition: background-size 250ms ease-in;
+			will-change: background-size;
+
+			&:hover {
+				background-size: 0% 4px, 100% 4px;
+				color: $btn-link-color;
+			}
+			.svg-inline--fa {
+				color: $cyan;
+			}
+		}
+	}
+	&.btn-gradient {
+		text-transform: uppercase;
+		font-weight: $font-weight-bold;
+		letter-spacing: 0.08em;
+		background-color: $primary;
+		padding: rfs-fluid-value(21px) rfs-fluid-value(26px);
+		@include rfs(74px, border-radius);
+		border: none;
+		box-shadow:
+			0.3px 0.7px 1.1px rgba(46, 52, 68, 0.036),
+			1.1px 2.2px 3.6px rgba(46, 52, 68, 0.084),
+			1.8px 9px 16px rgba(46, 52, 68, 0.22);
+		z-index: 2;
+		transition: box-shadow 0.25s, transform 0.25s, background-size 0.5s;
+		
+		&:hover {
+			transform: translate3d(0,-5px,0);
+			box-shadow:
+				0px 0.8px 2px rgba(46,	52,	68, 0.065),	0px 2.7px 6.7px rgba(46,	52,	68, 0.095),	0px 12px 20px rgba(46,	52,	68, 0.28);
+		}
+		&.has-btn-gradient-1 {
+			color: #fff;
+			background-image: linear-gradient(83.1deg, $dark-magenta 0%, $dark-blue 100%), linear-gradient(83.1deg, $dark-blue 0%, $dark-magenta 100%);
+			background-size: 100% 100%, 0% 100%;
+			background-position: 100% 100%, 0 100%;
+			background-repeat: no-repeat;
+
+			&:hover {
+				background-size: 0% 100%, 100% 100%;
+				background-position: 0% 100%, 100% 100%;
+			}
+		}
+		&.has-btn-gradient-2 {
+			color: #fff;
+			background-image: linear-gradient(83.1deg, $dark-cyan 0%, $cyan 100%), linear-gradient(83.1deg, $dark-cyan 0%, $cyan 100%);
+			background-size: 100% 100%, 0% 100%;
+			background-position: 100% 100%, 0 100%;
+			background-repeat: no-repeat;
+
+			&:hover {
+				background-size: 0% 100%, 100% 100%;
+				background-position: 0% 100%, 100% 100%;
+			}
+		}
+	}
+}
+// RGB Button Hover Effect
+.rgb-button-wrap {
+	margin: 0;
+	position: relative;
+	display: inline-block;
+
+	span,
+	span::before,
+	span::after {
+		opacity: 0;
+		content: '';
+		position: absolute;
+		top: 50%;
+		border-radius: 50%;
+		width: calc(100% - 30px);
+		height: 50%;
+		z-index: 1;
+		transition: opacity 0.75s;
+		transform: translateY(-50%);
+		animation: gradientbg 2s linear infinite;
+	}
+	span {
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		transform: none;
+	}
+	span::before {
+		background: #ff3b8d;
+		left: -15px;
+		box-shadow: 30px 20px 0 #07b2ff;
+	}
+	span::after {
+		background: #8dff08;
+		right: -15px;
+		box-shadow: -30px -20px 0 #ffeb3b;
+	}
+	&:hover,
+	&:active {
+		span,
+		span::before,
+		span::after {
+			opacity: 1;
+		}
+	}
+}
+
+@keyframes gradientbg {
+	0% {
+		filter: blur(25px) hue-rotate(0deg);
+	}
+	100% {
+		filter: blur(25px) hue-rotate(360deg);
+	}
+}

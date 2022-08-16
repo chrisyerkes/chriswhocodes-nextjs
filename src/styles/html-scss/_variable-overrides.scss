@@ -1,0 +1,56 @@
+// Global Options
+$enable-cssgrid: true;
+
+// Typeography
+$font-family-sans-serif: 'Open Sans', 'Trebuchet MS', sans-serif;
+// $font-family-sans-serif-italic: 'Open Sans Italic', sans-serif;
+$font-family-serif: 'DM Serif Display', serif;
+// $font-family-serif-italic: 'DM Serif Display Italic', serif;
+// Weights
+$font-weight-extra-bold: 800;
+// Headings
+$headings-font-family: $font-family-serif;
+// Nav
+$navbar-nav-link-padding-x: 1.5rem;
+
+// Colors
+$light-blue: #00DBDE;
+$cyan: #08AEEA;
+$dark-cyan: #0093E9;
+$teal: #2AF598;
+$yellow: #FBDA61;
+$magenta: #FF5ACD;
+$dark-magenta: #C850C0;
+$dark-blue: #4158D0;
+$body-color: #2E3444;
+$darkened-body-color: #414B66;
+// General
+$link-hover-color: $cyan;
+// Content Section BG
+$bg-color-1: #D3DCE3;
+$bg-color-2: #ECF1F5;
+// Toggle Control
+$toggle-bg-1: #818FB4;
+$toggle-bg-2: #5F6882;
+$toggle-light: #4D5569;
+$toggle-dark: #ECF1F5;
+// Nav
+$nav-link-color: #000;
+// Buttons
+$btn-link-color: $body-color;
+// Form Fields
+$input-border-color: transparent;
+$input-focus-border-color: tint-color($cyan, 50%);
+$input-focus-box-shadow: 0 0 0 0.25rem rgba($cyan, 25%);
+$form-check-input-border: none;
+$form-check-input-focus-border: $cyan;
+$form-check-input-focus-box-shadow: 0 0 0 0.25rem rgba($cyan,25%);
+$form-check-input-checked-bg-color: $dark-cyan;
+$form-check-input-checked-border-color: $dark-cyan;
+$form-switch-focus-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$cyan}' opacity='.5' /></svg>");
+// Footer
+$footer-bg-1: #414B66;
+$footer-bg-2: #2E3444;
+
+// Off Canvas
+$offcanvas-horizontal-width: 100vw;

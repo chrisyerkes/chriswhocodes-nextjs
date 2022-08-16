@@ -1,0 +1,39 @@
+.svg-settings {
+	position: absolute !important;
+	height: 1px; width: 1px;
+	overflow: hidden;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+}
+#linear-green-blue {
+	.linear-stop1 {
+		stop-color: #08AEEA;
+	}
+	.linear-stop2 {
+		stop-color: #2AF598;
+	}
+}
+#linear-yellow-pink {
+	.linear-stop1 {
+		stop-color: #FF5ACD;
+	}
+	.linear-stop2 {
+		stop-color: #FBDA61;
+	}
+}
+#linear-pink-blue {
+	.linear-stop1 {
+		stop-color: #4158D0;
+	}
+	.linear-stop2 {
+		stop-color: #C850C0;
+	}
+}
+#linear-teal-blue {
+	.linear-stop1 {
+		stop-color: #0093E9;
+	}
+	.linear-stop2 {
+		stop-color: #00DBDE;
+	}
+}

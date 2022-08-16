@@ -1,0 +1,43 @@
+.hero {
+	position: relative;
+	z-index: 50;
+	background: linear-gradient(281.84deg, $bg-color-1 0%, $bg-color-2 100%);
+	@include padding-top(192px);
+
+	@include media-breakpoint-down(md) {
+		@include padding-top(60px);
+	}
+	.hero-title {
+		@include font-size(96px);
+		line-height: 1.1;
+		font-weight: $font-weight-normal;
+		@include rfs(25px, margin-bottom);
+	}
+	.hero-subtitle {
+		@include font-size(32px);
+		line-height: 1.45;
+		@include rfs(35px, margin-bottom);
+	}
+	.hero-left {
+		@include rfs(80px, padding-bottom);
+	}
+	.hero-right {
+		z-index: 50;
+		position: relative;
+		@include rfs(80px, padding-bottom);
+
+		@include media-breakpoint-down(lg) {
+			padding-bottom: 0;
+		}
+		// img {
+		// 	position: absolute;
+		// 	top: 0;
+		// 	right: 0;
+		// 	max-width: calc(100% - 15px);
+
+		// 	@include media-breakpoint-up(xxl) {
+		// 		max-width: calc(100% - 65px);
+		// 	}
+		// }
+	}
+}

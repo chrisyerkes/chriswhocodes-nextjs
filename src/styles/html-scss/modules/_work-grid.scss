@@ -1,0 +1,65 @@
+.work-grid {
+	@include rfs(100px, margin-bottom);
+
+	@include media-breakpoint-down(lg) {
+		--bs-gap: 50px 30px !important;
+	}
+	@include media-breakpoint-down(md) {
+		--bs-gap: 55px 0 !important;
+	}
+	.work-item {
+		.card {
+			position: relative;
+			background-color: #fff;
+			box-shadow:
+				0.3px 0.7px 1.1px rgba(46, 52, 68, 0.036),
+				1.1px 2.2px 3.6px rgba(46, 52, 68, 0.084),
+				1.8px 9px 16px rgba(46, 52, 68, 0.22);
+			transition: box-shadow 0.25s, transform 0.25s;
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 8px;
+			}
+			&:hover {
+				transform: translate3d(0, -6px, 0);
+				box-shadow:
+					0.3px 0.8px 2px rgba(0, 0, 0, 0.065),
+					0.9px 2.7px 6.7px rgba(0, 0, 0, 0.095),
+					4px 12px 30px rgba(0, 0, 0, 0.28);
+			}
+			.work-description {
+				@include font-size(20px);
+				padding: rfs-fluid-value(30px) rfs-fluid-value(40px);
+
+				& > *:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+		&:nth-child(4n + 1) {
+			.card::before {
+				@include gradient-x($dark-blue, $magenta);
+			}
+		}
+		&:nth-child(4n + 2) {
+			.card::before {
+				@include gradient-x($dark-cyan, $light-blue);
+			}
+		}
+		&:nth-child(4n + 3) {
+			.card::before {
+				@include gradient-x($cyan, $teal);
+			}
+		}
+		&:nth-child(4n + 4) {
+			.card::before {
+				@include gradient-x($yellow, $dark-magenta);
+			}
+		}
+	}
+}

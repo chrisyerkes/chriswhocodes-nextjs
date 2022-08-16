@@ -1,0 +1,211 @@
+.social-nav {
+	&:not(.text-links) {
+		@include rfs(52px, margin-bottom);
+
+		.nav-item {
+			@include rfs(16px, margin-right);
+			border-radius: 100%;
+			position: relative;
+			transition: box-shadow 0.25s, transform 0.25s;
+			
+			&::before,
+			&::after {
+				opacity: 0;
+				content: '';
+				position: absolute;
+				top: 50%;
+				border-radius: 50%;
+				width: 50%;
+				height: 50%;
+				z-index: 1;
+				transition: opacity 0.75s;
+				transform: translateY(-50%);
+				animation: socialgradientbg 2s linear infinite;
+			}
+			&::before {
+				background: #ff3b8d;
+				left: -5px;
+				box-shadow: 17px 15px 0 #07b2ff;
+			}
+			&::after {
+				background: #8dff08;
+				right: -5px;
+				box-shadow: -17px -15px 0 #ffeb3b;
+			}
+			.nav-link {
+				@include font-size(24px);
+				// background-color: #fff;
+				width: 48px;
+				height: 48px;
+				border-radius: 100%;
+				// border: 4px solid;
+				position: relative;
+				z-index: 50;
+
+				&::before {
+					content: '';
+					width: 100%;
+					height: 100%;
+					border-radius: 100%;
+					background-color: black;
+					position: absolute;
+					left: 0;
+					top: 0;
+					z-index: 0;
+				}
+				&::after {
+					content: '';
+					width: calc(100% - 8px);
+					height: calc(100% - 8px);
+					background-color: white;
+					border-radius: 100%;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					z-index: 1;
+					transition: 0.5s opacity;
+				}
+				.svg-inline--fa {
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					transform: translate(calc(-50% + .5px), calc(-50% + 1px));
+					z-index: 50;
+
+					// path {
+					// 	transition: 0.5s all;
+					// }
+					&.fa-linkedin-in path {
+						fill: url(#linear-green-blue);
+					}
+					&.fa-github path {
+						fill: url(#linear-yellow-pink);
+					}
+					&.fa-codepen path {
+						fill: url(#linear-pink-blue);
+					}
+					&.fa-twitter path {
+						fill: url(#linear-teal-blue);
+					}
+				}
+				&:hover {
+					&::after {
+						opacity: 0;
+					}
+					.svg-inline--fa path {
+						fill: white;
+					}
+				}
+			}
+			&.linkedin {
+				.nav-link {
+					&::before {
+						background: linear-gradient(349.08deg, $teal -9.77%, $cyan 109.47%);
+					}
+				}
+			}
+			&.github {
+				.nav-link {
+					&::before {
+						background: linear-gradient(46.08deg, $yellow -35.85%, $magenta 137.74%);
+					}
+				}
+			}
+			&.codepen {
+				.nav-link {
+					&::before {
+						background: linear-gradient(232.43deg, $dark-blue -42.66%, $dark-magenta 147.84%);
+					}
+				}
+			}
+			&.twitter {
+				.nav-link {
+					&::before {
+						background: linear-gradient(227.2deg, $dark-cyan -39.42%, $light-blue 133.65%);
+					}
+				}
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+			&:hover {
+				transform: translate3d(0, -3px, 0);
+				box-shadow: 0px 0.8px 2px rgba(46, 52, 68, 0.065),
+					0px 2.7px 6.7px rgba(46, 52, 68, 0.095),
+					0px 12px 20px rgba(46, 52, 68, 0.28);
+
+				&::before,
+				&::after {
+					opacity: 1;
+				}
+			}
+						
+		}
+	}
+	&.white-social-nav {
+		margin: 0;
+
+		.nav-item {
+			.nav-link {
+				background-color: transparent;
+
+				&::before {
+					display: none !important;
+				}
+				&::after {
+					background-color: transparent;
+					border: 3px solid white;
+					width: 100%;
+					height: 100%;
+					transition: 0.5s border-color;
+				}
+				.svg-inline--fa {
+					path {
+						fill: #fff !important;
+					}
+				}
+				&:hover {
+					&::after {
+						display: block;
+						opacity: 1;
+						background-color: rgba(white, .25) !important;
+						border-color: transparent;
+						transition: 0.5s border-color, 0.5s background-color;
+					}
+				}
+			}
+		}
+	}
+	&.text-links {
+		font-weight: $font-weight-bold;
+		margin-left: auto;
+		margin-right: auto;
+
+		@include media-breakpoint-up(lg) {
+			max-width: 85%;
+		}
+		@include media-breakpoint-only(sm) {
+			max-width: 50%;
+		}
+		.nav-item {
+			@include media-breakpoint-up(sm) {
+				width: 50%;
+			}
+			.nav-link {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+}
+
+@keyframes socialgradientbg {
+	0% {
+		filter: blur(13px) hue-rotate(0deg);
+	}
+
+	100% {
+		filter: blur(13px) hue-rotate(360deg);
+	}
+}

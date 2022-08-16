@@ -1,0 +1,65 @@
+.mobile-offcanvas {
+	border: none !important;
+	background-color: transparent;
+	pointer-events: all;
+	transition: background-color 0.5s, backdrop-filter 0.5s, transform 0.5s;
+
+	.offcanvas-header {
+		padding: 0;
+		@include padding-top(20px);
+	}
+	.offcanvas-body {
+		transition: opacity 0.5s;
+		transition-delay: 0.4s;
+
+		@include media-breakpoint-down(md) {
+			opacity: 0;
+		}
+	}
+	.btn-close {
+		position: absolute;
+		right: 30px;
+		top: 40px;
+		z-index: 100;
+		border: none;
+		background-color: transparent;
+		@include font-size(45px);
+		line-height: 1;
+		padding: rfs-fluid-value(5px) rfs-fluid-value(10px);
+		transition: opacity 0.5s;
+		transition-delay: 0.5s;
+
+		@include media-breakpoint-down(md) {
+			opacity: 0;
+		}
+	}
+	&.show,
+	&.showing {
+		backdrop-filter: blur(15px);
+		background-color: rgba(white, .7);
+
+		.btn-close {
+			opacity: 1;
+		}
+		.offcanvas-body {
+			opacity: 1;
+		}
+	}
+	&.show {
+		&.hiding {
+			backdrop-filter: none;
+			background-color: transparent;
+
+			.btn-close {
+				opacity: 0;
+				transition: opacity 0.25s;
+				transition-delay: 0s;
+			}
+			.offcanvas-body {
+				opacity: 0;
+				transition: opacity 0.25s;
+				transition-delay: 0s;
+			}
+		}
+	}
+}

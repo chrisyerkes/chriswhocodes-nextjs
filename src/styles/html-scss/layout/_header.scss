@@ -1,0 +1,14 @@
+#main-header {
+	z-index: 100;
+
+	@include media-breakpoint-down(md) {
+		pointer-events: none;
+
+		.navbar-toggler {
+			pointer-events: all;
+		}
+	}
+	& > nav {
+		@include rfs(60px, padding-top);
+	}
+}

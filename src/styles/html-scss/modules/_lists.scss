@@ -1,0 +1,43 @@
+.skills-list {
+	list-style: none;
+	padding: 0;
+
+	li {
+		@include font-size(20px);
+		position: relative;
+		display: flex;
+		align-items: center;
+
+		path {
+			transition: 0.25s fill;
+		}
+		&:nth-child(8n + 1),
+		&:nth-child(8n + 8) {
+			path {
+				fill: url(#linear-green-blue);
+			}
+		}
+		&:nth-child(8n + 2),
+		&:nth-child(8n + 3) {
+			path {
+				fill: url(#linear-yellow-pink);
+			}
+		}
+		&:nth-child(8n + 4),
+		&:nth-child(8n + 5) {
+			path {
+				fill: url(#linear-pink-blue);
+			}
+		}
+		&:nth-child(8n + 6),
+		&:nth-child(8n + 7) {
+			path {
+				fill: url(#linear-teal-blue);
+			}
+		}
+		.bullet {
+			@include font-size(32px);
+			@include margin-right(20px);
+		}
+	}
+}

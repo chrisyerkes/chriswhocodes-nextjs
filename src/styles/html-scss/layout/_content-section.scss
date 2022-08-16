@@ -1,0 +1,10 @@
+.content-section {
+	@include rfs(140px, margin-bottom);
+
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+	&.has-tinted-background {
+		background: linear-gradient(323.73deg, $bg-color-1 0.48%, $bg-color-2 100%);
+	}
+}
