@@ -21,9 +21,11 @@
   },
   "dependencies": {
     "@apollo/client": "^3.6.9",
+    "@gumgum/react-script-tag": "^0.0.3",
     "bootstrap": "^5.2.0",
     "date-fns": "^2.29.1",
     "dotenv": "^16.0.1",
+    "flickity": "^3.0.0",
     "fuse.js": "^6.6.2",
     "graphql": "^16.5.0",
     "he": "^1.2.0",
@@ -37,6 +39,7 @@
     "react-dom": "18.2.0",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.4.0",
+    "react-script-tag": "^1.1.2",
     "rss": "^1.2.2",
     "sass": "^1.54.0",
     "style.css": "^1.0.3"

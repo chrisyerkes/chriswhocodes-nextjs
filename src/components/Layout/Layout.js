@@ -1,3 +1,6 @@
+// import FooterScripts from 'components/FooterScripts/FooterScripts';
+import Script from 'next/script';
+
 import { useRouter } from 'next/router';
 import { Helmet } from 'react-helmet';
 import styles from './Layout.module.scss';
@@ -5,7 +8,8 @@ import styles from './Layout.module.scss';
 import useSite from 'hooks/use-site';
 import { helmetSettingsFromMetadata } from 'lib/site';
 
-import Nav from 'components/Nav';
+import TemplateHeader from 'components/TemplateHeader';
+// import Nav from 'components/Nav';
 import Main from 'components/Main';
 import Footer from 'components/Footer';
 
@@ -63,12 +67,18 @@ const Layout = ({ children }) => {
   return (
     <div className={styles.layoutContainer}>
       <Helmet {...helmetSettings} />
-
-      <Nav />
+      <TemplateHeader className="position-absolute w-100 top-0 start-0" />
+      {/* <Nav /> */}
 
       <Main>{children}</Main>
 
       <Footer />
+      {/* <FooterScripts url="/static-assets/js/flickity.pkgd.min.js" /> */}
+      {/* <FooterScripts url="/static-assets/js/bootstrap.bundle.min.js" /> */}
+      {/* <FooterScripts url="/static-assets/js/functions.js" defer={true} className="remove" /> */}
+      {/* investigate getting bootstrap js modules to work in nextjs app. check bookmark in mops digital chrome for article */}
+      <Script url="/static-assets/js/flickity.pkgd.min.js" strategy="lazyOnload" />
+      <Script src="/static-assets/js/functions.js" strategy="lazyOnload" />
     </div>
   );
 };
