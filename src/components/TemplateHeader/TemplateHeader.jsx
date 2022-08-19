@@ -4,8 +4,8 @@ import styles from './TemplateHeader.module.scss';
 
 const TemplateHeader = ({ children, className }) => {
   return (
-		<header id="main-header" className={`${styles.header} ${className}`}>
-			<Nav />
+    <header id="main-header" className={`${styles.header} ${className}`}>
+      <Nav />
       {children}
     </header>
   );

@@ -208,6 +208,7 @@ export function helmetSettingsFromMetadata(metadata = {}, options = {}) {
     ...link,
     {
       rel: 'canonical',
+      crossOrigin: 'anonymous',
       href: metadata.canonical,
     },
   ].filter(({ href } = {}) => !!href);

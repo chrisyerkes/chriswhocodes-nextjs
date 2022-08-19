@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import Link from 'next/link';
-import { FaSearch } from 'react-icons/fa';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 import useSite from 'hooks/use-site';
 import useSearch, { SEARCH_STATE_LOADED } from 'hooks/use-search';
@@ -194,12 +196,12 @@ const Nav = () => {
             className="offcanvas offcanvas-end mobile-offcanvas"
             data-bs-backdrop="false"
             data-bs-scroll="true"
-            tabindex="-1"
+            tabIndex="-1"
             id="navbarNav"
           >
             <div className="offcanvas-header">
               <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
-                <i className="fa-solid fa-xmark"></i>
+                <FontAwesomeIcon icon={faXmark} />
               </button>
             </div>
             <div className="offcanvas-body">
@@ -241,7 +243,7 @@ const Nav = () => {
           </div>
         </div>
       </nav>
-      <nav className={styles.nav}>
+      {/* <nav className={styles.nav}>
         <Section className={styles.navSection}>
           <p className={styles.navName}>
             <Link href="/">
@@ -257,7 +259,7 @@ const Nav = () => {
             {searchVisibility === SEARCH_HIDDEN && (
               <button onClick={handleOnToggleSearch} disabled={!searchIsLoaded}>
                 <span className="sr-only">Toggle Search</span>
-                <FaSearch />
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
               </button>
             )}
             {searchVisibility === SEARCH_VISIBLE && (
@@ -295,7 +297,7 @@ const Nav = () => {
             )}
           </div>
         </Section>
-      </nav>
+      </nav> */}
     </>
   );
 };

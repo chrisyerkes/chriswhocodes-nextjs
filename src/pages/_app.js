@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import NextApp from 'next/app';
 
 import { SiteContext, useSiteContext } from 'hooks/use-site';
@@ -12,6 +14,7 @@ import { getAllMenus } from 'lib/menus';
 // import 'styles/globals.scss';
 import 'styles/html-scss/vendor.scss';
 import variables from 'styles/_variables.module.scss';
+import { isRequiredArgument } from 'graphql';
 
 function App({ Component, pageProps = {}, metadata, recentPosts, categories, menus }) {
   const site = useSiteContext({
@@ -20,6 +23,9 @@ function App({ Component, pageProps = {}, metadata, recentPosts, categories, men
     categories,
     menus,
   });
+  useEffect(() => {
+    require('../../public/static-assets/js/bootstrap.bundle.min.js');
+  }, []);
 
   return (
     <SiteContext.Provider value={site}>

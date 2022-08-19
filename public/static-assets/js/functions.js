@@ -12,14 +12,14 @@
 		// 	navToggler.classList.toggle('open');
 		// });
 		// Light/dark mode toggle
-		const lightswitch = document.querySelector('.light-switch');
-		lightswitch.addEventListener('click', (e) => {
-			console.log('clicked');
-			e.preventDefault();
-			document.body.classList.toggle('dark-mode');
-			lightswitch.classList.toggle('active');
-			lightswitch.classList.toggle('off');
-		});
+		// const lightswitch = document.querySelector('.light-switch');
+		// lightswitch.addEventListener('click', (e) => {
+		// 	console.log('clicked');
+		// 	e.preventDefault();
+		// 	document.body.classList.toggle('dark-mode');
+		// 	lightswitch.classList.toggle('active');
+		// 	lightswitch.classList.toggle('off');
+		// });
 		// Flickity Slider
 const services = document.querySelector('.services-slider');
 if (services) {

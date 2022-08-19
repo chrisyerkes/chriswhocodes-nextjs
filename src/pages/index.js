@@ -3,7 +3,8 @@ import { getPaginatedPosts } from 'lib/posts';
 import { WebsiteJsonLd } from 'lib/json-ld';
 
 import Layout from 'components/Layout';
-import Header from 'components/Header';
+// import Header from 'components/Header';
+import HomeHero from 'components/HomeHero';
 import Section from 'components/Section';
 import Container from 'components/Container';
 import PostCard from 'components/PostCard';
@@ -18,7 +19,8 @@ export default function Home({ posts, pagination }) {
   return (
     <Layout>
       <WebsiteJsonLd siteTitle={title} />
-      <Header>
+      <HomeHero />
+      {/* <Header>
         <h1
           dangerouslySetInnerHTML={{
             __html: title,
@@ -31,7 +33,7 @@ export default function Home({ posts, pagination }) {
             __html: description,
           }}
         />
-      </Header>
+      </Header> */}
 
       <Section>
         <Container>

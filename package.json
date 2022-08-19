@@ -21,6 +21,11 @@
   },
   "dependencies": {
     "@apollo/client": "^3.6.9",
+    "@fortawesome/fontawesome-svg-core": "^6.1.2",
+    "@fortawesome/free-brands-svg-icons": "^6.1.2",
+    "@fortawesome/free-regular-svg-icons": "^6.1.2",
+    "@fortawesome/free-solid-svg-icons": "^6.1.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@gumgum/react-script-tag": "^0.0.3",
     "bootstrap": "^5.2.0",
     "date-fns": "^2.29.1",
