@@ -8,6 +8,8 @@
 		mobileNav.addEventListener('hide.bs.offcanvas', (event) => {
 			mobileNav.classList.add('hiding');
 		});
+
+		/*
 		// navToggler.addEventListener('click', function () {
 		// 	navToggler.classList.toggle('open');
 		// });
@@ -21,7 +23,7 @@
 		// 	lightswitch.classList.toggle('off');
 		// });
 		// Flickity Slider
-/* const services = document.querySelector('.services-slider');
+const services = document.querySelector('.services-slider');
 if (services) {
 	const servicesSlider = new Flickity(services, {
 		cellSelector: '.single-service',
