@@ -5,6 +5,7 @@ import { WebsiteJsonLd } from 'lib/json-ld';
 import Layout from 'components/Layout';
 // import Header from 'components/Header';
 import HomeHero from 'components/HomeHero';
+import SkillSlider from 'components/SkillSlider';
 import Section from 'components/Section';
 import Container from 'components/Container';
 import PostCard from 'components/PostCard';
@@ -20,6 +21,7 @@ export default function Home({ posts, pagination }) {
     <Layout>
       <WebsiteJsonLd siteTitle={title} />
       <HomeHero />
+      <SkillSlider />
       {/* <Header>
         <h1
           dangerouslySetInnerHTML={{

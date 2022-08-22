@@ -21,7 +21,7 @@
 		// 	lightswitch.classList.toggle('off');
 		// });
 		// Flickity Slider
-const services = document.querySelector('.services-slider');
+/* const services = document.querySelector('.services-slider');
 if (services) {
 	const servicesSlider = new Flickity(services, {
 		cellSelector: '.single-service',
@@ -50,6 +50,7 @@ if (services) {
 		},
 	});
 }
+
 		// Hero animation
 		const animation = document.querySelector('.chris-animated-container');
 		// animation check script
@@ -95,6 +96,8 @@ if (services) {
 		if (animation) {
 			randomAnimation(1000, 10000);
 		}
+
+*/
 		// Animated portrait
 		const portrait = document.querySelector('.contact-photo');
 		const overlay = document.querySelector('.overlay');
