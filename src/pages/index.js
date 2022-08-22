@@ -6,6 +6,7 @@ import Layout from 'components/Layout';
 // import Header from 'components/Header';
 import HomeHero from 'components/HomeHero';
 import SkillSlider from 'components/SkillSlider';
+import WorkGrid from 'components/WorkGrid';
 import Section from 'components/Section';
 import Container from 'components/Container';
 import PostCard from 'components/PostCard';
@@ -22,6 +23,7 @@ export default function Home({ posts, pagination }) {
       <WebsiteJsonLd siteTitle={title} />
       <HomeHero />
       <SkillSlider />
+      <WorkGrid />
       {/* <Header>
         <h1
           dangerouslySetInnerHTML={{
