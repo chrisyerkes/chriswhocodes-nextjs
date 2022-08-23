@@ -5,8 +5,10 @@ import { WebsiteJsonLd } from 'lib/json-ld';
 import Layout from 'components/Layout';
 // import Header from 'components/Header';
 import HomeHero from 'components/HomeHero';
-import SkillSlider from 'components/SkillSlider';
+import SkillSlider from 'components/ServiceSlider';
 import WorkGrid from 'components/WorkGrid';
+import SkillsList from 'components/SkillsList';
+import ContactInfo from 'components/ContactInfo';
 import Section from 'components/Section';
 import Container from 'components/Container';
 import PostCard from 'components/PostCard';
@@ -24,6 +26,8 @@ export default function Home({ posts, pagination }) {
       <HomeHero />
       <SkillSlider />
       <WorkGrid />
+      <SkillsList />
+      <ContactInfo />
       {/* <Header>
         <h1
           dangerouslySetInnerHTML={{
