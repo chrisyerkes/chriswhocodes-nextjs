@@ -41,7 +41,7 @@ export default function Home({ posts, pagination }) {
             __html: description,
           }}
         />
-      </Header> */}
+      </Header> 
 
       <Section>
         <Container>
@@ -64,7 +64,7 @@ export default function Home({ posts, pagination }) {
             />
           )}
         </Container>
-      </Section>
+      </Section> */}
     </Layout>
   );
 }
