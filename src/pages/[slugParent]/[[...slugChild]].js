@@ -61,7 +61,7 @@ export default function Page({ page, breadcrumbs }) {
             dangerouslySetInnerHTML={featuredImage.caption}
           />
         )}
-        <h1 className={styles.title}>{title}</h1>
+        <h1 className={styles.title}>{title} I'm a page test</h1>
       </Header>
 
       <Content>

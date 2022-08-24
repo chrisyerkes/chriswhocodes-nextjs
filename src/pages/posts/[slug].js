@@ -86,6 +86,7 @@ export default function Post({ post, socialImage, related }) {
             __html: title,
           }}
         />
+        <h2>I'm a post test</h2>
         <Metadata
           className={styles.postMetadata}
           date={date}

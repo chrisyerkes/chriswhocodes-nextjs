@@ -1,5 +1,5 @@
 import useSite from 'hooks/use-site';
-import { getPaginatedPosts } from 'lib/posts';
+import { getAllPosts, getPaginatedPosts } from 'lib/posts';
 import { WebsiteJsonLd } from 'lib/json-ld';
 
 import Layout from 'components/Layout';
@@ -28,6 +28,20 @@ export default function Home({ posts, pagination }) {
       <WorkGrid />
       <SkillsList />
       <ContactInfo />
+      <div className="posts">
+        <ul className="postsList">
+          {posts.map((post) => {
+            return (
+              <li key={post.slug}>
+                <PostCard post={post} />
+              </li>
+              // <li key={post.slug}>
+              //   <h2>{post.title}</h2>
+              // </li>
+            );
+          })}
+        </ul>
+      </div>
       {/* <Header>
         <h1
           dangerouslySetInnerHTML={{
@@ -83,3 +97,28 @@ export async function getStaticProps() {
     },
   };
 }
+// export async function getStaticProps() {
+//   const GET_POSTS = gql`
+//     query AllPostsQuery {
+//       posts {
+//         nodes {
+//           title
+//           content
+//           date
+//           uri
+//         }
+//       }
+//     }
+//   `;
+//   const response = await client.query({
+//     query: GET_POSTS,
+//   });
+
+//   const posts = response?.data?.posts?.nodes;
+
+//   return {
+//     props: {
+//       posts,
+//     },
+//   };
+// }
