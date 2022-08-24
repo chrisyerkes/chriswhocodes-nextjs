@@ -1,5 +1,6 @@
 import useSite from 'hooks/use-site';
-import { getAllPosts, getPaginatedPosts } from 'lib/posts';
+// import { getPaginatedPosts } from 'lib/posts';
+import { getPaginatedWorks } from 'lib/work';
 import { WebsiteJsonLd } from 'lib/json-ld';
 
 import Layout from 'components/Layout';
@@ -16,7 +17,7 @@ import Pagination from 'components/Pagination';
 
 import styles from 'styles/pages/Home.module.scss';
 
-export default function Home({ posts, pagination }) {
+export default function Home({ works, pagination }) {
   const { metadata = {} } = useSite();
   const { title, description } = metadata;
 
@@ -28,20 +29,6 @@ export default function Home({ posts, pagination }) {
       <WorkGrid />
       <SkillsList />
       <ContactInfo />
-      <div className="posts">
-        <ul className="postsList">
-          {posts.map((post) => {
-            return (
-              <li key={post.slug}>
-                <PostCard post={post} />
-              </li>
-              // <li key={post.slug}>
-              //   <h2>{post.title}</h2>
-              // </li>
-            );
-          })}
-        </ul>
-      </div>
       {/* <Header>
         <h1
           dangerouslySetInnerHTML={{
@@ -79,17 +66,27 @@ export default function Home({ posts, pagination }) {
           )}
         </Container>
       </Section> */}
+      <ul className="test">
+        {works.map((post) => {
+          return (
+            <li key={post.slug}>
+              {/* <PostCard post={post} /> */}
+              <h2>{post.caseStudyTitle}</h2>
+            </li>
+          );
+        })}
+      </ul>
     </Layout>
   );
 }
 
 export async function getStaticProps() {
-  const { posts, pagination } = await getPaginatedPosts({
+  const { works, pagination } = await getPaginatedWorks({
     queryIncludes: 'archive',
   });
   return {
     props: {
-      posts,
+      works,
       pagination: {
         ...pagination,
         basePath: '/posts',
@@ -97,28 +94,3 @@ export async function getStaticProps() {
     },
   };
 }
-// export async function getStaticProps() {
-//   const GET_POSTS = gql`
-//     query AllPostsQuery {
-//       posts {
-//         nodes {
-//           title
-//           content
-//           date
-//           uri
-//         }
-//       }
-//     }
-//   `;
-//   const response = await client.query({
-//     query: GET_POSTS,
-//   });
-
-//   const posts = response?.data?.posts?.nodes;
-
-//   return {
-//     props: {
-//       posts,
-//     },
-//   };
-// }
